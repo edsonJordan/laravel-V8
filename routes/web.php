@@ -20,3 +20,14 @@ Route::get('/', function () {
 Route::get('cursos', function () {
     return "Bienvenidos a la pagina cursos";
 });
+Route::get('cursos/{create}', function () {
+    return "En esta pagina puedes crear un curso";
+});
+Route::get('cursos/{curso}/{categoria}', function ($curso, $categoria= null) {
+    if ($categoria) {
+        return "Bienvenido al curso $curso, de la categoria $categoria ";
+    }else{
+        return "Bienvenido al curso $curso";
+    }
+    
+});

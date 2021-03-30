@@ -8,18 +8,18 @@ class CursoController extends Controller
 {
     public function index()
     {
-        return "Bienvenidos a la pagina cursos";
+        return view('cursos.index');
     }
     public function create($curso)
     {
-        return "Bienvenido al curso $curso";
+        return view('cursos.create', compact('curso'));
     }
+    
     public function show($curso, $categoria = null)
     {
-        if ($categoria) {
-            return "Bienvenido al curso $curso, de la categoria $categoria ";
-        }else{
-            return "Bienvenido al curso $curso";
-        }
+        return view('cursos.show', compact('curso','categoria'));
+        dd($categoria);
+       //  if (!$categoria) { return view('cursos.show', compact('curso','categoria'));} 
+        
     }
 }

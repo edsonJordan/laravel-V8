@@ -14,7 +14,8 @@ class CursoSeeder extends Seeder
      */
     public function run()
     {
-        $curso = new Curso();
+        //Curso::factory(50)->create();
+    /*     $curso = new Curso();
         $curso->name = "Laravel";
         $curso->description = "El mejor framework de PHP";
         $curso->categoria = "Desarrollo web";
@@ -24,6 +25,6 @@ class CursoSeeder extends Seeder
         $curso2->name = "Vue";
         $curso2->description = "El mejor framework de Javascript";
         $curso2->categoria = "Desarrollo web";
-        $curso2->save();
+        $curso2->save(); */
     }
 }

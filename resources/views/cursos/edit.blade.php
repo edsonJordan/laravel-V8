@@ -9,20 +9,35 @@
         <label for="">
             Nombre:
             <br>
-            <input type="text" name="name" value=" {{$curso->name}} " id="">
+            <input type="text" name="name" value=" {{ old('name', $curso->name)}}" >
         </label>
+        @error('name')
+            <br>
+            <small>*{{ $message }}</small>
+            <br>
+        @enderror
         <br>
         <label for="">
             Descripción:
             <br>
-            <textarea name="description" id="" cols="30" rows="10">{{$curso->description}}</textarea>
+            <textarea name="description" id="" cols="30" rows="10">{{old('description', $curso->description)}}</textarea>
         </label>
+        @error('description')
+        <br>
+        <small>*{{ $message }}</small>
+        <br>
+        @enderror
         <br>
         <label for="">
             Categoria:
             <br>
-            <input type="text" name="category" value=" {{$curso->categoria}} " id="">
+            <input type="text" name="category" value=" {{ old('category', $curso->categoria) }} " id="">
         </label>
+        @error('category')
+        <br>
+        <small>*{{ $message }}</small>
+        <br>
+        @enderror
         <br>
         <input type="submit" value="Enviar">
     </form>

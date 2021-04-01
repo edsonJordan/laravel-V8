@@ -2,23 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Curso;
 use Illuminate\Http\Request;
 
 class CursoController extends Controller
 {
     public function index()
     {
-        return view('cursos.index');
+        $cursos = Curso::paginate();
+        return view('cursos.index', compact('cursos'));
     }
-    public function create($curso)
+    public function create()
     {
-        return view('cursos.create', compact('curso'));
+        return view('cursos.create');
     }
     
-    public function show($curso, $categoria = null)
+    public function show($id)
     {
-        return view('cursos.show', compact('curso','categoria'));
-        dd($categoria);
+        $curso = Curso::find($id);
+        return view('cursos.show', compact('id', 'curso'));
        //  if (!$categoria) { return view('cursos.show', compact('curso','categoria'));} 
         
     }

@@ -20,6 +20,6 @@ Route::get('/', HomeController::class);
     return "Hola mundo Iniciando Laravel";
 }); */
 
-Route::get('cursos', [CursoController::class, 'index']);
-Route::get('cursos/{curso}', [ CursoController::class, 'create']);
-Route::get('cursos/{curso}/{categoria?}', [CursoController::class, 'show']);
+Route::get('cursos', [CursoController::class, 'index'])->name('cursos.index');
+Route::get('cursos/crear', [ CursoController::class, 'create'])->name('cursos.create');
+Route::get('cursos/{id}', [CursoController::class, 'show'])->name('cursos.show');

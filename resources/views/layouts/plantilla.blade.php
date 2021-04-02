@@ -8,7 +8,15 @@
     {{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
     
 </head>
+<style>
+    .active{
+        color: red;
+        font-weight: bold;
+    }
+</style>
 <body>
+            @include('layouts.partials.header')
             @yield('content')
+            @include('layouts.partials.footer')
 </body>
 </html>

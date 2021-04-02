@@ -13,7 +13,7 @@ use App\Http\Controllers\CursoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
 /* Route::get('/', function () {
     //return view('welcome');
@@ -36,3 +36,4 @@ Route::delete('cursos/{curso}', [CursoController::class, 'destroy'])->name('curs
 
 
 Route::resource('asignaturas', CursoController::class)->parameters(['asignaturas' => 'curso'])->names('cursos');
+Route::view('nosotros', 'nosotros')->name('nosotros');

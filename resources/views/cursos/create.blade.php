@@ -19,7 +19,7 @@
         <label for="">
             Descripción:
             <br>
-            <input type="text" name="description" id="  " value=" {{old('description')}} ">
+            <textarea name="description" id="" cols="30" rows="10"> {{old('description')}}</textarea>
         </label>
         @error('description')
             <br>

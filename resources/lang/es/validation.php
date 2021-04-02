@@ -147,7 +147,6 @@ return [
     */
 
     'attributes' => [
-        'name' => 'nombre',
         'description' => 'descripcion',
         'category' => 'categoria'
     ],

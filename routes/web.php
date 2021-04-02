@@ -19,10 +19,10 @@ Route::get('/', HomeController::class);
     //return view('welcome');
     return "Hola mundo Iniciando Laravel";
 }); */
-
+/* 
 Route::get('cursos', [CursoController::class, 'index'])->name('cursos.index');
 Route::get('cursos/crear', [ CursoController::class, 'create'])->name('cursos.create');
-/* Form Create course */
+// Form Create course 
 Route::post('cursos', [ CursoController::class, 'store'])->name('cursos.store');
 
 
@@ -32,4 +32,7 @@ Route::get('cursos/{curso}/edit', [CursoController::class, 'edit'])->name('curso
 
 Route::put('cursos/{curso}', [CursoController::class, 'update'])->name('cursos.update');
 
-Route::delete('cursos/{curso}', [CursoController::class, 'destroy'])->name('cursos.destroy');
+Route::delete('cursos/{curso}', [CursoController::class, 'destroy'])->name('cursos.destroy'); */
+
+
+Route::resource('asignaturas', CursoController::class)->parameters(['asignaturas' => 'curso'])->names('cursos');

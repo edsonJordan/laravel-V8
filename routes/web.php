@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactanosController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
@@ -40,9 +41,7 @@ Route::delete('cursos/{curso}', [CursoController::class, 'destroy'])->name('curs
 
 Route::resource('asignaturas', CursoController::class)->parameters(['asignaturas' => 'curso'])->names('cursos');
 Route::view('nosotros', 'nosotros')->name('nosotros');
-Route::get('contactanos', function () {
-    $correo = new ContactanosMailable;
 
-    Mail::to('edson2869944@gmail.com')->send($correo);
-    return "Mensaje enviado";
-});
+Route::get('contactanos', [ContactanosController::class, 'index'])->name('contactanos.index');
+
+Route::post('contactanos', [ContactanosController::class, 'store'])->name('contactanos.store');
